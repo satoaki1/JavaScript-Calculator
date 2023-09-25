@@ -14,12 +14,15 @@ function correctDisplay() {
 // For buttons with data-value attribute
 buttons.forEach(button => {
     button.addEventListener('click', function() {
+
         // Check if the button has a data-value attribute
         if (this.hasAttribute('data-value')) {
+
             // If display is 0 and clicked value is not ".", reset the display before adding new value
             if (display.value === "0" && this.getAttribute('data-value') !== ".") {
                 display.value = "";
             }
+
             const value = this.getAttribute('data-value');
             display.value += value;
         }
@@ -41,6 +44,7 @@ allClearButton.addEventListener('click', function() {
 // Equals button functionality
 equalsButton.addEventListener('click', function() {
     try {
+
         // Replace the division symbol (÷) with the actual JavaScript division operator (/)
         let expression = display.value.replace(/÷/g, '/');
         display.value = eval(expression);
